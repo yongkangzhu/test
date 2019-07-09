@@ -1,0 +1,38 @@
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm("test", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <table>
+        <tr>
+            <td>
+                <input id="File1" type="file" name="File" />
+            </td>
+            <td>
+                <input id="Submit1" type="submit" value="submit" />
+            </td>
+        </tr>
+    </table>
+}
+
+@if (Model != null)
+{
+    <h2>ok: @Model</h2>
+}
+
+
+@using (Html.BeginForm("getfile", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <table>
+        <tr>
+            <td>
+                <input id="File1" type="text" name="File" />
+            </td>
+            <td>
+                <input id="Submit1" type="submit" value="submit" />
+            </td>
+        </tr>
+    </table>
+}
